@@ -8,7 +8,7 @@ ENV PATH="/root/.local/bin:$PATH"
 WORKDIR /app
 
 # Copy your Python project files to the container (if you have any)
-# COPY . /app
+COPY pyproject.toml poetry.lock /app/
 
 # Install your project dependencies with Poetry
 RUN poetry config virtualenvs.create false && poetry install && rm -rf /root/.cache/pypoetry
